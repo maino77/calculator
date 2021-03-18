@@ -1,0 +1,36 @@
+body {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  /* 배경색 그라인드 */
+  background: linear-gradient(to right, #f1f2f6, #1e90ff);
+}
+
+/* 이전 요소와 이후 요소 변경 */
+*,
+*::before,
+*::after {
+  /* 상자를 테두리 상자에 넣어 크기를 조절*/
+  box-sizing: border-box;
+  /* 글꼴 및 두께 설정*/
+  font-family: Gotham Rounded, sans-serif;
+  font-weight: normal;
+}
+
+.calcul-grid {
+  display: grid;
+  /* 컨텐츠를 중앙으로 맞춤(가로 가운데 정렬) */
+  justify-content: center;
+  /* 화면의 중앙에 정렬(세로 가운데 정렬) */
+  align-items: center;
+  /* 최소높이100vh를 설정함으로써 항상 높이 100%에 grid가 작동*/
+  min-height: 100vh;
+  /* 명시적 열(Track, columns)의 크기를 정의.*/
+  /* repeat(칸, 폭) : 여기서는 열에 칸 5개 100px 설정 */
+  grid-template-columns: repeat(4, 100px);
+  /* 입력 숫자가 많아짐에 따라 div가 늘어나도록 설정 */
+  /* grid-template-rows:명시적 행(Track)의 크기를 정의 */
+  /* minmax 폭의 ‘최소/최대 크기’ auto를 줘서 grid에 따라 늘어날 수 있도록 해줌 */
+  /* repeat() 함수로 칸 4개 100px 설정*/
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
